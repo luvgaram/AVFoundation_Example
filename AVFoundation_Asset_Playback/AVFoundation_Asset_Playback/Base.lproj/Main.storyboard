@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-VV-Bx3">
+                                <rect key="frame" x="244" y="480" width="112" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYW-ds-fPh">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="QnF-0b-D6R"/>
+                                            <constraint firstAttribute="height" constant="30" id="fO0-54-EZ9"/>
+                                        </constraints>
+                                        <state key="normal" title="Load"/>
+                                        <connections>
+                                            <action selector="loadAssetFromFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="33l-vB-Iw0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szJ-02-6qS">
+                                        <rect key="frame" x="66" y="0.0" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="a2x-dg-SBg"/>
+                                            <constraint firstAttribute="height" constant="30" id="hia-Ws-OFN"/>
+                                        </constraints>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="amI-ot-2C4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Icq-Jh-n9y"/>
+                                    <constraint firstAttribute="width" constant="112" id="JCm-OU-W4F"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6y-rV-IWO" customClass="PlayerView">
+                                <rect key="frame" x="0.0" y="40" width="600" height="338"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h6y-rV-IWO" secondAttribute="height" multiplier="128:72" id="7XQ-fx-rH5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h6y-rV-IWO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="4TR-8A-F1a"/>
+                            <constraint firstItem="m8a-VV-Bx3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ICt-Qv-Kfr"/>
+                            <constraint firstItem="h6y-rV-IWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kFQ-uA-Kut"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m8a-VV-Bx3" secondAttribute="bottom" constant="90" id="kIv-w3-mnS"/>
+                            <constraint firstItem="h6y-rV-IWO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="wUX-g8-zzw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="szJ-02-6qS" id="3BR-Kk-QBe"/>
+                        <outlet property="playerView" destination="h6y-rV-IWO" id="HL5-nW-VY2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="503" y="458"/>
+        </scene>
+    </scenes>
+</document>
