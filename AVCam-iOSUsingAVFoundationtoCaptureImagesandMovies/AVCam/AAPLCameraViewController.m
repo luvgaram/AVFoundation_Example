@@ -33,9 +33,20 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 // Session management.
 @property (nonatomic) dispatch_queue_t sessionQueue;
+
+// AVCaptureSession object is used to coordinate the flow of data from AV input devices to outputs.
+// To perform a real-time or offline capture, instantiate an AVCaptureSession object and add appropriate inputs (such as AVCaptureDeviceInput),
+// and outputs (such as AVCaptureMovieFileOutput).
 @property (nonatomic) AVCaptureSession *session;
+
+// AVCaptureDeviceInput is a concrete sub-class of AVCaptureInput you use to capture data from an AVCaptureDevice object.
 @property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
+
+// AVCaptureMovieFileOutput is a concrete sub-class of AVCaptureFileOutput you use to capture data to a QuickTime movie.
 @property (nonatomic) AVCaptureMovieFileOutput *movieFileOutput;
+// AVCaptureStillImageOutput is a concrete sub-class of AVCaptureOutput that you use to capture a high-quality still image with accompanying metadata.
+// (deprecated in iOS 10.0 and does not support newer camera capture features such as RAW image output, Live Photos, or wide-gamut color.
+// In iOS 10.0 and later, use the AVCapturePhotoOutput class instead)
 @property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 
 // Utilities.
